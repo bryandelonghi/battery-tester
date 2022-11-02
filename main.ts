@@ -1,5 +1,10 @@
+/**
+ * Button A gives analog number (show that first).
+ * 
+ * Button B gives calculation to mV.
+ */
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(pins.digitalReadPin(DigitalPin.P0))
+    basic.showNumber(pins.analogReadPin(AnalogPin.P0))
 })
 /**
  * Extension:
@@ -15,5 +20,8 @@ input.onButtonPressed(Button.B, function () {
         basic.showIcon(IconNames.Happy)
     }
 })
+input.onGesture(Gesture.Shake, function () {
+    basic.clearScreen()
+})
 let millivolts = 0
-basic.showString("Battery ")
+basic.showString("Battery Tester")
